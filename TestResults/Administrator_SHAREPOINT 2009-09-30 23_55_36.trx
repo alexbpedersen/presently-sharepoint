@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="5fb7adf9-dc88-451c-9f54-f1439abd4b2f" name="Administrator@SHAREPOINT 2009-09-30 23:55:36" runUser="PRESENTLY\Administrator" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Local Test Run" id="5e53431e-dd66-4fb7-afc2-7ff1996d5f6a">
+    <Description>This is a default test run configuration for a local test run.</Description>
+    <Deployment runDeploymentRoot="C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\WebPart1\TestResults\Administrator_SHAREPOINT 2009-09-30 23_55_36">
+      <DeploymentItem filename="C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\WebPart1\WebPart1\bin\Debug\WebPart1.dll" />
+    </Deployment>
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2009-09-30T23:55:36.7500000-05:00" queuing="2009-09-30T23:55:39.2031250-05:00" start="2009-09-30T23:55:39.6718750-05:00" finish="2009-09-30T23:56:21.5156250-05:00" />
+  <TestDefinitions>
+    <UnitTest name="TestSendTweets" storage="c:\documents and settings\administrator\my documents\visual studio 2008\projects\webpart1\twittertest\bin\debug\twittertest.dll" id="9f96dc3e-b776-a96e-10fc-a0a5ac6e3b4b">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="3a221089-91e8-4ce0-9d3e-8a9a2823c9b1" />
+      <TestMethod codeBase="C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\WebPart1\TwitterTest\bin\Debug\TwitterTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TwitterTest.TwitterServiceTest, TwitterTest" name="TestSendTweets" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="9f96dc3e-b776-a96e-10fc-a0a5ac6e3b4b" executionId="3a221089-91e8-4ce0-9d3e-8a9a2823c9b1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="3a221089-91e8-4ce0-9d3e-8a9a2823c9b1" testId="9f96dc3e-b776-a96e-10fc-a0a5ac6e3b4b" testName="TestSendTweets" computerName="SHAREPOINT" duration="00:00:40.7262280" startTime="2009-09-30T23:55:39.8281250-05:00" endTime="2009-09-30T23:56:21.1406250-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

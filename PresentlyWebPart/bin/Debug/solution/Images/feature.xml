@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature Id="62678329-22ce-40b7-baf4-5f9eb5ef2ca3" Title="Images" Scope="Web" Version="1.0.0.0" Hidden="FALSE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ElementManifests>
+    <ElementManifest Location="Images\Module.xml" />
+    <ElementFile Location="Images\lightboxblank.gif" />
+    <ElementFile Location="Images\lightboxbtnclose.gif" />
+    <ElementFile Location="Images\lightboxbtnnext.gif" />
+    <ElementFile Location="Images\lightboxbtnprev.gif" />
+    <ElementFile Location="Images\lightboxicoloading.gif" />
+  </ElementManifests>
+</Feature>

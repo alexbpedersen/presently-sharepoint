@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="41a8e9b6-7f30-4d4b-b927-0609ab7e5eb0" name="Administrator@SHAREPOINT 2009-10-01 12:57:44" runUser="PRESENTLY\Administrator" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Local Test Run" id="5e53431e-dd66-4fb7-afc2-7ff1996d5f6a">
+    <Description>This is a default test run configuration for a local test run.</Description>
+    <Deployment runDeploymentRoot="C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\WebPart1\TestResults\Administrator_SHAREPOINT 2009-10-01 12_57_44">
+      <DeploymentItem filename="C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\WebPart1\WebPart1\bin\Debug\WebPart1.dll" />
+    </Deployment>
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Completed">
+    <Counters total="3" executed="3" passed="3" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2009-10-01T12:57:44.6093750-05:00" queuing="2009-10-01T12:57:50.8906250-05:00" start="2009-10-01T12:57:51.5156250-05:00" finish="2009-10-01T13:12:47.5000000-05:00" />
+  <TestDefinitions>
+    <UnitTest name="TestGetTweetsWithoutSettings" storage="c:\documents and settings\administrator\my documents\visual studio 2008\projects\webpart1\twittertest\bin\debug\twittertest.dll" id="d432fb7b-c15d-1e83-6e03-8fc0d9f13ab8">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="d6e386b0-e0b8-4b15-9351-8af3668042eb" />
+      <TestMethod codeBase="C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\WebPart1\TwitterTest\bin\Debug\TwitterTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TwitterTest.TwitterServiceTest, TwitterTest" name="TestGetTweetsWithoutSettings" />
+    </UnitTest>
+    <UnitTest name="TestGetTweets" storage="c:\documents and settings\administrator\my documents\visual studio 2008\projects\webpart1\twittertest\bin\debug\twittertest.dll" id="3bd4fa63-cc17-eab2-6de9-7f5dc0a8e155">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="4763edfb-70ed-450e-83b9-ff75eb640e7a" />
+      <TestMethod codeBase="C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\WebPart1\TwitterTest\bin\Debug\TwitterTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TwitterTest.TwitterServiceTest, TwitterTest" name="TestGetTweets" />
+    </UnitTest>
+    <UnitTest name="TestSendTweets" storage="c:\documents and settings\administrator\my documents\visual studio 2008\projects\webpart1\twittertest\bin\debug\twittertest.dll" id="9f96dc3e-b776-a96e-10fc-a0a5ac6e3b4b">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="9e183f06-e761-4795-b4f9-8ed4a3c4a438" />
+      <TestMethod codeBase="C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\WebPart1\TwitterTest\bin\Debug\TwitterTest.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TwitterTest.TwitterServiceTest, TwitterTest" name="TestSendTweets" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="3bd4fa63-cc17-eab2-6de9-7f5dc0a8e155" executionId="4763edfb-70ed-450e-83b9-ff75eb640e7a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9f96dc3e-b776-a96e-10fc-a0a5ac6e3b4b" executionId="9e183f06-e761-4795-b4f9-8ed4a3c4a438" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d432fb7b-c15d-1e83-6e03-8fc0d9f13ab8" executionId="d6e386b0-e0b8-4b15-9351-8af3668042eb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="4763edfb-70ed-450e-83b9-ff75eb640e7a" testId="3bd4fa63-cc17-eab2-6de9-7f5dc0a8e155" testName="TestGetTweets" computerName="SHAREPOINT" duration="00:00:17.0977093" startTime="2009-10-01T12:57:51.7031250-05:00" endTime="2009-10-01T12:58:09.6875000-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="9e183f06-e761-4795-b4f9-8ed4a3c4a438" testId="9f96dc3e-b776-a96e-10fc-a0a5ac6e3b4b" testName="TestSendTweets" computerName="SHAREPOINT" duration="00:14:36.8893384" startTime="2009-10-01T12:58:09.7656250-05:00" endTime="2009-10-01T13:12:46.6718750-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d6e386b0-e0b8-4b15-9351-8af3668042eb" testId="d432fb7b-c15d-1e83-6e03-8fc0d9f13ab8" testName="TestGetTweetsWithoutSettings" computerName="SHAREPOINT" duration="00:00:00.0010051" startTime="2009-10-01T13:12:46.6875000-05:00" endTime="2009-10-01T13:12:46.7187500-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentlyWebPart", "PresentlyWebPart\PresentlyWebPart.csproj", "{5A35523C-7E64-4D55-8B53-DE73D8FBD410}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterTest", "TwitterTest\TwitterTest.csproj", "{D8F642AE-6EAE-42E7-9048-D9BD5D57C1C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4BA26167-578B-4821-A688-668787393624}"
+	ProjectSection(SolutionItems) = preProject
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+		PresentlyWebPart.vsmdi = PresentlyWebPart.vsmdi
+		PresentlyWebPart1.vsmdi = PresentlyWebPart1.vsmdi
+		PresentlyWebPart2.vsmdi = PresentlyWebPart2.vsmdi
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = PresentlyWebPart2.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A35523C-7E64-4D55-8B53-DE73D8FBD410}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A35523C-7E64-4D55-8B53-DE73D8FBD410}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A35523C-7E64-4D55-8B53-DE73D8FBD410}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5A35523C-7E64-4D55-8B53-DE73D8FBD410}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A35523C-7E64-4D55-8B53-DE73D8FBD410}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A35523C-7E64-4D55-8B53-DE73D8FBD410}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D8F642AE-6EAE-42E7-9048-D9BD5D57C1C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8F642AE-6EAE-42E7-9048-D9BD5D57C1C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8F642AE-6EAE-42E7-9048-D9BD5D57C1C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8F642AE-6EAE-42E7-9048-D9BD5D57C1C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

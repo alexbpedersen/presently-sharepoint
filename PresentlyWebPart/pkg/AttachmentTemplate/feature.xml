@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature Id="4262b21e-0869-43b1-8f9c-be258dbd4db6" Title="AttachmentTemplate" Scope="Web" Version="1.0.0.0" Hidden="FALSE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ElementManifests>
+    <ElementFile Location="AttachmentTemplate\schema.xml" />
+    <ElementFile Location="AttachmentTemplate\AllItems.aspx" />
+    <ElementFile Location="AttachmentTemplate\Combine.aspx" />
+    <ElementFile Location="AttachmentTemplate\DispForm.aspx" />
+    <ElementFile Location="AttachmentTemplate\EditDlg.htm" />
+    <ElementFile Location="AttachmentTemplate\EditForm.aspx" />
+    <ElementFile Location="AttachmentTemplate\FileDlg.htm" />
+    <ElementFile Location="AttachmentTemplate\Repair.aspx" />
+    <ElementFile Location="AttachmentTemplate\Upload.aspx" />
+    <ElementFile Location="AttachmentTemplate\WebFldr.aspx" />
+  </ElementManifests>
+</Feature>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution SolutionId="c49b57ea-9553-4726-b0e7-6b28a83b5cff" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <FeatureManifests>
+    <FeatureManifest Location="PresentlyWebPart\feature.xml" />
+    <FeatureManifest Location="Images\feature.xml" />
+    <FeatureManifest Location="ListTemplate\feature.xml" />
+  </FeatureManifests>
+  <Assemblies>
+    <Assembly Location="TwitterLib.dll" DeploymentTarget="GlobalAssemblyCache" />
+    <Assembly Location="PresentlyWebPart.dll" DeploymentTarget="GlobalAssemblyCache">
+      <ClassResources>
+        <ClassResource Location="Images\Images\lightboxblank.gif" />
+        <ClassResource Location="Images\Images\lightboxbtnclose.gif" />
+        <ClassResource Location="Images\Images\lightboxicoloading.gif" />
+        <ClassResource Location="Images\Images\lightboxbtnnext.gif" />
+        <ClassResource Location="Images\Images\lightboxbtnprev.gif" />
+      </ClassResources>
+      <SafeControls>
+        <SafeControl Assembly="com.intridea.presently.PresentlyWebPart" Namespace="com.intridea.presently" TypeName="PresentlyWebPart" Safe="True" />
+      </SafeControls>
+    </Assembly>
+  </Assemblies>
+  <ApplicationResourceFiles>
+    <ApplicationResourceFile Location="Images\Images\lightboxblank.gif" />
+    <ApplicationResourceFile Location="Images\Images\lightboxbtnclose.gif" />
+    <ApplicationResourceFile Location="Images\Images\lightboxicoloading.gif" />
+    <ApplicationResourceFile Location="Images\Images\lightboxbtnnext.gif" />
+    <ApplicationResourceFile Location="Images\Images\lightboxbtnprev.gif" />
+  </ApplicationResourceFiles>
+</Solution>

@@ -1,0 +1,19 @@
+﻿<solution id="c49b57ea-9553-4726-b0e7-6b28a83b5cff" name="PresentlyWebPart">
+  <features>
+    <feature id="e9988ba8-1114-467c-b3fc-da256b9fa076">
+      <featureElements>
+        <featureElement id="6541136b-b6ba-49b9-bf67-1a55eb5e9e75" name="PresentlyWebPart" />
+      </featureElements>
+    </feature>
+    <feature id="62678329-22ce-40b7-baf4-5f9eb5ef2ca3">
+      <featureElements>
+        <featureElement id="425f4671-0819-4ae9-b67a-34cc7f199f0b" name="Images" />
+      </featureElements>
+    </feature>
+    <feature id="1a4dded3-22af-491c-a6fa-bc534b9136a7">
+      <featureElements>
+        <featureElement id="7e8790e2-be7a-4643-b638-3e9e1e99e86a" name="ListTemplate" />
+      </featureElements>
+    </feature>
+  </features>
+</solution>
