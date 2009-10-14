@@ -9,7 +9,7 @@ namespace com.intridea.presently
 {
     class ConfigPart : EditorPart
     {
-        private Config uc;
+        private PresentlyConfig uc;
 
         private PresentlyWebPart SelectedWebPart
         {
@@ -18,14 +18,15 @@ namespace com.intridea.presently
 
         public override bool ApplyChanges()
         {
+            EnsureChildControls();
             try
             {
                 if (Page.IsPostBack)
                 {
                     SelectedWebPart.Username = uc.Username;
-                    SelectedWebPart.Url = uc.Subdomain;
+                    SelectedWebPart.Url = uc.Url;
                     SelectedWebPart.Password = uc.Password;
-
+                    SelectedWebPart.SettingModified = true;
                     return true;
                 }
                 return false;
@@ -38,13 +39,11 @@ namespace com.intridea.presently
 
         protected override void CreateChildControls()
         {
-            base.CreateChildControls();
-
-            string ucPath = UserControlsVirtualPath() + "Config.ascx";
-            uc = (Config)Page.LoadControl(ucPath);
+            if (uc == null)
+                uc = (PresentlyConfig)Page.LoadControl("~/_controltemplates/PresentlyConfig.ascx");
             uc.Username = SelectedWebPart.Username;
             uc.Password = SelectedWebPart.Password;
-            uc.Subdomain = SelectedWebPart.Url;
+            uc.Url = SelectedWebPart.Url;
 
             Controls.Add(uc);
 
@@ -52,40 +51,10 @@ namespace com.intridea.presently
 
         public override void SyncChanges()
         {
+            EnsureChildControls();
             uc.Username = SelectedWebPart.Username;
             uc.Password = SelectedWebPart.Password;
-            uc.Subdomain = SelectedWebPart.Url;
+            uc.Url = SelectedWebPart.Url;
         }
-
-
-
-        /// <summary>
-        /// Gets the path where user controls can be loaded from for this web part.
-        /// This is a virtual path, site root relative, ending in a slash.
-        /// </summary>
-        /// <returns>String with path</returns>
-        public string UserControlsVirtualPath()
-        {
-            SPWeb currentWeb = SPControl.GetContextWeb(Context);
-            Type currentType = GetType();
-            string classResourcePath = SPWebPartManager.GetClassResourcePath(currentWeb, currentType);
-
-            int startIndex = classResourcePath.IndexOf("/wpresources/");
-            if (startIndex < 0)
-            {
-                startIndex = classResourcePath.IndexOf("/_wpresources/");
-            }
-            if (startIndex < 0)
-            {
-                throw new Exception(String.Format("ClassResourcePath '{0}' should contain /wpresources/ or /_wpresources/", classResourcePath));
-            }
-
-            classResourcePath = classResourcePath.Substring(startIndex);
-
-            classResourcePath = string.Concat(classResourcePath, "/com.intridea.presently/");
-
-            return classResourcePath;
-        }
-
     }
 }

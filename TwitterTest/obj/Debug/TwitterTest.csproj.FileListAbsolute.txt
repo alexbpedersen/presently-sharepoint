@@ -11,3 +11,14 @@ C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\WebPart1\TwitterTest\obj\Debug\TwitterTest.dll
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\WebPart1\TwitterTest\obj\Debug\TwitterTest.pdb
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\WebPart1\TwitterTest\bin\Debug\TwitterLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\bin\Debug\Images\lightboxblank.gif
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\bin\Debug\Images\lightboxbtnclose.gif
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\bin\Debug\Images\lightboxbtnnext.gif
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\bin\Debug\Images\lightboxbtnprev.gif
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\bin\Debug\Images\lightboxicoloading.gif
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\bin\Debug\TwitterTest.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\bin\Debug\TwitterTest.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\obj\Debug\TwitterTest.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\obj\Debug\TwitterTest.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\bin\Debug\TwitterLib.dll

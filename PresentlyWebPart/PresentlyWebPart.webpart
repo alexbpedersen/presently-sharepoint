@@ -12,7 +12,7 @@
     <data>
       <properties>
         <property name="Title" type="string">Presently Web Part</property>
-        <property name="Description" type="string">PresentlyWebPart Description</property>        
+        <property name="Description" type="string">PresentlyWebPart Description</property>             
       </properties>
     </data>
   </webPart>

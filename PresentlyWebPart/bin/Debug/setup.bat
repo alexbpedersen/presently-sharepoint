@@ -166,6 +166,11 @@ goto LInitialize
        set ValidationFailed=1
     )
 
+    if exist "%SPTemplateLocation%\ControlTemplates\PresentlyConfig.ascx" (
+       echo Error: Template file PresentlyConfig.ascx already exists in current SharePoint.
+       set ValidationFailed=1
+    )
+
     goto :EOF
 
 

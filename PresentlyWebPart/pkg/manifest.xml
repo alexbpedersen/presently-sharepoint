@@ -7,15 +7,7 @@
   </FeatureManifests>
   <Assemblies>
     <Assembly Location="TwitterLib.dll" DeploymentTarget="GlobalAssemblyCache" />
-    <Assembly Location="PresentlyWebPart.dll" DeploymentTarget="GlobalAssemblyCache">
-      <ClassResources>
-        <ClassResource Location="Images\Images\lightboxblank.gif" />
-        <ClassResource Location="Images\Images\lightboxbtnclose.gif" />
-        <ClassResource Location="Images\Images\lightboxicoloading.gif" />
-        <ClassResource Location="Images\Images\lightboxbtnnext.gif" />
-        <ClassResource Location="Images\Images\lightboxbtnprev.gif" />
-      </ClassResources>
-    </Assembly>
+    <Assembly Location="PresentlyWebPart.dll" DeploymentTarget="GlobalAssemblyCache" />
   </Assemblies>
   <ApplicationResourceFiles>
     <ApplicationResourceFile Location="Images\Images\lightboxblank.gif" />
@@ -24,4 +16,7 @@
     <ApplicationResourceFile Location="Images\Images\lightboxbtnnext.gif" />
     <ApplicationResourceFile Location="Images\Images\lightboxbtnprev.gif" />
   </ApplicationResourceFiles>
+  <TemplateFiles>
+    <TemplateFile Location="ControlTemplates\PresentlyConfig.ascx" />
+  </TemplateFiles>
 </Solution>

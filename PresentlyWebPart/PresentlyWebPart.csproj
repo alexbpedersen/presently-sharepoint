@@ -54,17 +54,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\PresentlyUserControls\PresentlyConfig.ascx.cs">
+      <Link>Templates\ControlTemplates\PresentlyConfig.ascx.cs</Link>
+      <DependentUpon>PresentlyConfig.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="..\PresentlyUserControls\PresentlyConfig.ascx.designer.cs">
+      <Link>Templates\ControlTemplates\PresentlyConfig.ascx.designer.cs</Link>
+      <DependentUpon>PresentlyConfig.ascx.cs</DependentUpon>
+    </Compile>
     <Compile Include="ScriptManager\jQueryManager.cs" />
     <Compile Include="ScriptManager\ScriptBlock.cs" />
     <Compile Include="ScriptManager\StartFunction.cs" />
     <Compile Include="TweetBuilder.cs" />
     <Compile Include="TwitterService.cs" />
     <Compile Include="ConfigPart.cs" />
-    <Compile Include="UserControls\Config.ascx.cs">
-      <DependentUpon>Config.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PresentlyWebPart.cs" />
   </ItemGroup>
@@ -74,13 +78,11 @@
     <None Include="PresentlyWebPart.webpart" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\PresentlyUserControls\PresentlyConfig.ascx">
+      <Link>Templates\ControlTemplates\PresentlyConfig.ascx</Link>
+    </Content>
     <Content Include="bin\Debug\solution\manifest.xml" />
     <Content Include="bin\Debug\solution\TwitterLib.dll" />
-    <Content Include="bin\Debug\TwitterLib.dll" />
-    <EmbeddedResource Include="UserControls\Config.ascx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <SubType>ASPXCodeBehind</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="js\jquery.corner.js">
     </EmbeddedResource>
     <EmbeddedResource Include="js\presently.js">
@@ -119,12 +121,6 @@
     <Content Include="PresentlyWebPart.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="App_LocalResources\Config.ascx.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ClassResources\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

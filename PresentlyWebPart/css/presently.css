@@ -25,13 +25,13 @@ div.odd_color
 }
 div.
 #big_box_update.with_sidebar .presently_update_box {
-width:80%;
+width:70%;
 }
 #big_box_update .presently_update_box {
 float:left;
 font-size:16px;
 height:42px;
-width:80%;
+width:70%;
 -moz-border-radius-bottomleft:5px;
 -moz-border-radius-bottomright:5px;
 -moz-border-radius-topleft:5px;
@@ -58,7 +58,7 @@ font-size:18px;
 font-weight:bold;
 margin-left:5px;
 margin-top:0;
-padding:7px;
+padding:5px;
 }
 .loading_div 
 {

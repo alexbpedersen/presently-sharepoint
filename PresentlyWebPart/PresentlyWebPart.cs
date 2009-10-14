@@ -27,34 +27,42 @@ namespace com.intridea.presently
         String _password;
         String _url;
         TwitterService _twitterService;
+
         protected jQueryManager jqueryManager = null;
         private int refreshInterval = 60;
         UpdatePanel refreshBox;
         Timer timer;
         ScriptManager scriptHandler;
         bool property_modified = false;
+
+        [WebPartStorage(Storage.Personal)]
+        public bool SettingModified
+        {
+            get { return property_modified; }
+            set { property_modified = value;}
+        }
         //[Browsable(false), Category("Miscellaneous"), WebPartStorage(Storage.Shared), XmlElement(ElementName = "Scope")]
-        [Personalizable(PersonalizationScope.User), Category("Settings"), WebBrowsable, WebDisplayName("Username"), WebDescription("Use this property to set the user whose public timeline will be displayed")]
+        [Personalizable(PersonalizationScope.User), Category("Settings"), WebDisplayName("Username"), WebDescription("Use this property to set the user whose public timeline will be displayed")]
         public String Username
         {
             get { return _username; }
-            set { _username = value; property_modified = true; }
+            set { _username = value; }
         }
 
         //[Browsable(false), Category("Miscellaneous"), WebPartStorage(Storage.Shared), XmlElement(ElementName = "Scope")]
-        [Personalizable(PersonalizationScope.User), Category("Security"), WebBrowsable, WebDisplayName("Password"), WebDescription("Use this property to set the user password")]
+        [Personalizable(PersonalizationScope.User), Category("Security"), WebDisplayName("Password"), WebDescription("Use this property to set the user password")]
         [PasswordPropertyText(true)]
         public String Password
         {
             get { return _password; }
-            set { _password = value; property_modified = true; }
+            set { _password = value;}
         }
         //[Browsable(false), Category("Miscellaneous"), WebPartStorage(Storage.Shared), XmlElement(ElementName = "Scope")]
-        [Personalizable(PersonalizationScope.User), Category("Settings"), WebBrowsable, WebDisplayName("Url"), WebDescription("Use this property to set the domain name")]
+        [Personalizable(PersonalizationScope.User), Category("Settings"), WebDisplayName("Url"), WebDescription("Use this property to set the domain name")]
         public String Url
         {
             get { return _url; }
-            set { _url = value; property_modified = true; }
+            set { _url = value;}
         }
 
         protected override void OnInit(EventArgs e)
@@ -107,7 +115,7 @@ namespace com.intridea.presently
             SPSite mySite = SPContext.Current.Site;
             SPWeb myWeb = SPContext.Current.Web;
             CreateList(mySite, myWeb);
-
+            
             base.OnInit(e);
 
 
@@ -126,9 +134,20 @@ namespace com.intridea.presently
             _twitterService = new TwitterService(this);
             this.AllowEdit = true;            
         }
-
+        protected override void OnPreRender(EventArgs e)
+        {
+            if (_twitterService == null)
+                _twitterService = new TwitterService(this);
+            else if (property_modified)
+            {
+                _twitterService.updateLogins(this.Username, this.Password, this.Url);
+                property_modified = false;
+            }
+            base.OnPreRender(e);
+        }
         protected override void CreateChildControls() 
         {
+
             if (timer == null)
                 timer = new Timer();
             timer.ID = this.ID + "timer";
@@ -179,8 +198,8 @@ namespace com.intridea.presently
             }
             if (!_twitterService.isConfigured())
                 lit.Text = "<br/>Please provide presently URL and User/Password in the settings.<br/>" + lit.Text;
-            else
-                lit.Text = GetTweets() + lit.Text;
+            else if (!Page.IsPostBack)
+                lit.Text = GetTweets();
 
             if (refreshBox.Triggers != null)
             {
@@ -235,16 +254,6 @@ namespace com.intridea.presently
                 }
             }
         }
-        protected override void OnPreRender(EventArgs e)
-        {
-            _twitterService.updateLogins(this.Username, this.Password, this.Url);
-            base.OnPreRender(e);
-        }
-        protected override void RenderWebPart(HtmlTextWriter output)
-        {
-            _twitterService.updateLogins(this.Username, this.Password, this.Url);
-            base.RenderWebPart(output);
-        }
 
 
         public override object WebBrowsableObject
@@ -256,18 +265,17 @@ namespace com.intridea.presently
         public override EditorPartCollection CreateEditorParts()
         {
 
-            /*ConfigPart tp = new ConfigPart();
+            ConfigPart tp = new ConfigPart();
             tp.ID = this.ID + "ConnectionSettingsEditor";
             tp.Title = "Connection Settings";
             tp.ChromeState = PartChromeState.Normal;
-            */
             
             List<EditorPart> editors = new List<EditorPart>();
             
-            PropertyGridEditorPart tp = new PropertyGridEditorPart();
+            /*PropertyGridEditorPart tp = new PropertyGridEditorPart();
             tp.ID = this.ID + "setting_editor";
             tp.Title = "Connection Settings";
-            
+            */
             editors.Add(tp);
 
             EditorPartCollection result = new EditorPartCollection(editors);
@@ -289,8 +297,6 @@ namespace com.intridea.presently
                 catch (Exception err)
                 {
                     StringBuilder sb = new StringBuilder();
-                    sb.Append("<div>" + _twitterService.isConfigured() + "</div>");
-                    sb.Append("<div>" + this.Username + ":" + this.Password + ":" + this.Url + "</div>");
                     sb.Append("<div>" + err.Message + "</div>" + "<div>" + err.StackTrace + "</div>");
                     return sb.ToString();
                 }

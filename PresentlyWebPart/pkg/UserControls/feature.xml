@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature Id="db0810ab-b518-4b84-9297-4eaf7c67504b" Title="UserControls" Scope="Web" Version="1.0.0.0" Hidden="FALSE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ElementManifests>
+    <ElementFile Location="UserControls\Config.ascx" />
+  </ElementManifests>
+</Feature>

@@ -8,13 +8,6 @@
   <Assemblies>
     <Assembly Location="TwitterLib.dll" DeploymentTarget="GlobalAssemblyCache" />
     <Assembly Location="PresentlyWebPart.dll" DeploymentTarget="GlobalAssemblyCache">
-      <ClassResources>
-        <ClassResource Location="Images\Images\lightboxblank.gif" />
-        <ClassResource Location="Images\Images\lightboxbtnclose.gif" />
-        <ClassResource Location="Images\Images\lightboxicoloading.gif" />
-        <ClassResource Location="Images\Images\lightboxbtnnext.gif" />
-        <ClassResource Location="Images\Images\lightboxbtnprev.gif" />
-      </ClassResources>
       <SafeControls>
         <SafeControl Assembly="com.intridea.presently.PresentlyWebPart" Namespace="com.intridea.presently" TypeName="PresentlyWebPart" Safe="True" />
       </SafeControls>
@@ -27,4 +20,7 @@
     <ApplicationResourceFile Location="Images\Images\lightboxbtnnext.gif" />
     <ApplicationResourceFile Location="Images\Images\lightboxbtnprev.gif" />
   </ApplicationResourceFiles>
+  <TemplateFiles>
+    <TemplateFile Location="ControlTemplates\PresentlyConfig.ascx" />
+  </TemplateFiles>
 </Solution>
