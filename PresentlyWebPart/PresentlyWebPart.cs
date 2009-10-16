@@ -35,6 +35,12 @@ namespace com.intridea.presently
         ScriptManager scriptHandler;
         bool property_modified = false;
 
+        [Personalizable(PersonalizationScope.User), Category("Settings"), WebDisplayName("RefreshRate"), WebDescription("Use this property to set the refresh rate")]
+        public int RefreshRate
+        {
+            get { return refreshInterval; }
+            set { refreshInterval = value; }
+        }
         [WebPartStorage(Storage.Personal)]
         public bool SettingModified
         {
@@ -141,6 +147,9 @@ namespace com.intridea.presently
             else if (property_modified)
             {
                 _twitterService.updateLogins(this.Username, this.Password, this.Url);
+                lit.Text = GetTweets();
+                timer.Interval = refreshInterval * 1000;
+
                 property_modified = false;
             }
             base.OnPreRender(e);
@@ -153,17 +162,17 @@ namespace com.intridea.presently
             timer.ID = this.ID + "timer";
             timer.Interval = refreshInterval * 1000;
             timer.Tick += new EventHandler<EventArgs>(this.TimerHandler);
-            this.Controls.Add(timer);
+            //this.Controls.Add(timer);
 
             if (refreshBox == null)
                 refreshBox = new UpdatePanel();
+            refreshBox.ContentTemplateContainer.Controls.Add(timer);
 
             //EnsurePostBack();
 
             if (_twitterService == null)
                 _twitterService = new TwitterService(this);
-            else if (property_modified)
-            {
+            else {
                 _twitterService.updateLogins(this.Username, this.Password, this.Url);
                 property_modified = false;
             }
@@ -189,7 +198,7 @@ namespace com.intridea.presently
             div.Text = "</div>";
             this.Controls.Add(div);
             div = new Literal();
-            div.Text = "<div class='loading_div'> Loading ... </div>";
+            div.Text = "<div class='loading_div'> <img ALIGN=ABSMIDDLE src='resources/Images/Images/loading.gif'/> &nbsp;&nbsp;Loading ... </div>";
             this.Controls.Add(div);
             if (lit == null)
             {

@@ -9,14 +9,19 @@ namespace com.intridea.presently
     public static String buildTweets(TweetCollection tc) {
         try {
             if (tc.Count == 0) return "no tweets";
-            StringBuilder sb = new StringBuilder();
+            StringBuilder allSb = new StringBuilder();
             int i = 0;
             foreach (Tweet tweet in tc)
             {
+                StringBuilder sb = new StringBuilder();
+                int insertion_index = 0;
                 String style = (i % 2 == 0) ? "even_color" : "odd_color";
                 if (tweet.User != null)
-                    sb.Append("<div class='tweet "+style+"'><div class='tweetUserName'><a class='user_link' rel='@"+tweet.User.ScreenName+ "'>" + "<img src='"+tweet.User.ImageUrl+"'/>" + "</a></div>");
-
+                {
+                    sb.Append("<div class='tweet " + style + "'>");
+                    insertion_index = sb.Length;
+                    sb.Append("<div class='tweetUserName'><a class='user_link' rel='@" + tweet.User.ScreenName + "'>" + "<img src='" + tweet.User.ImageUrl + "'/>" + "</a></div>");
+                }
                 String replyTo = "";
                 string strTweet = parseTweet(tweet.Text, out replyTo);
                 sb.Append("<div id='"+tweet.Id+"' class='tweetText'>" + strTweet);
@@ -27,32 +32,36 @@ namespace com.intridea.presently
                     sb.Append(parseTweet(tweet.Paste.Text, out replyTo));
                     sb.Append("</div>");
                 }
-                sb.Append("</div>");
-
-                if (replyTo != null)
-                    sb.Append("<div class=\"tweetNote\">" + tweet.User.FullName +" To "+ replyTo+"</div>");
-                else if (tweet.User != null)
-                    sb.Append("<div class=\"tweetNote\">" + tweet.User.FullName + "</div>");
-
-                if (tweet.RelativeTime != null)
-                    sb.Append("<div class=\"tweetRelativeTime\">" + tweet.RelativeTime + " " + tweet.Source + "</div>");
-
                 if (tweet.Assets != null && tweet.Assets.Count > 0)
                 {
-                    sb.Append("<div class='tweetAttachment'>Attachments: ");
-                    foreach (Attachment attachment in tweet.Assets) {
+                    sb.Append("<div class='tweetAttachment'><span>Attachments:</span>");
+                    foreach (Attachment attachment in tweet.Assets)
+                    {
                         String url = attachment.Url.Replace("/original/", "/stream_multi_thumb/");
                         if (attachment.ContentType.StartsWith("image"))
                             sb.Append("<a rel='lightbox' href='" + attachment.Url + "'><img src='" + url + "'/></a>");
                         else
-                            sb.Append("<a href='"+attachment.Url+"'>"+attachment.FileName+"</a>");
+                            sb.Append("<a href='" + attachment.Url + "'>" + attachment.FileName + "</a>");
                     }
                     sb.Append("</div>");
                 }
+                sb.Append("</div>");
+
+                if (tweet.User != null)
+                {
+                    if (replyTo != null)
+                        sb.Insert(insertion_index, "<div class=\"tweetNote\">" + tweet.User.FullName + " To " + replyTo + "</div>");
+                    else if (tweet.User != null)
+                        sb.Insert(insertion_index, "<div class=\"tweetNote\">" + tweet.User.FullName + "</div>");
+                }
+                if (tweet.RelativeTime != null)
+                    sb.Append("<div class=\"tweetRelativeTime\">" + tweet.RelativeTime + " " + tweet.Source + "</div>");
+                
                 i++;
                 sb.Append("<div style='clear:both'></div></div>");
+                allSb.Append(sb.ToString());
             }
-            return sb.ToString();
+            return allSb.ToString();
         }
         catch (Exception err)
         {

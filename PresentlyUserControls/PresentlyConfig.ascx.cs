@@ -18,7 +18,7 @@ namespace com.intridea.presently
         private string _url;
         private string _username;
         private string _password;
-
+        private int _refreshRate;
         public string Url
         {
             get
@@ -54,7 +54,17 @@ namespace com.intridea.presently
                 _password = value;
             }
         }
-
+        public int RefreshRate
+        {
+            get
+            {
+                return int.Parse(RefreshDropDown.SelectedValue);
+            }
+            set
+            {
+                _refreshRate = value;
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -65,6 +75,7 @@ namespace com.intridea.presently
             UrlTextBox.Text = _url;
             UsernameTextBox.Text = _username;
             PasswordTextBox.Text = _password;
+            RefreshDropDown.SelectedValue = _refreshRate.ToString();
             base.CreateChildControls();
 
         }

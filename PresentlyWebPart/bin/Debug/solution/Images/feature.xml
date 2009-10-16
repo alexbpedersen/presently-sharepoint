@@ -7,5 +7,6 @@
     <ElementFile Location="Images\lightboxbtnnext.gif" />
     <ElementFile Location="Images\lightboxbtnprev.gif" />
     <ElementFile Location="Images\lightboxicoloading.gif" />
+    <ElementFile Location="Images\Loading.gif" />
   </ElementManifests>
 </Feature>

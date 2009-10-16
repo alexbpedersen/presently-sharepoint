@@ -19,6 +19,7 @@
     <ApplicationResourceFile Location="Images\Images\lightboxicoloading.gif" />
     <ApplicationResourceFile Location="Images\Images\lightboxbtnnext.gif" />
     <ApplicationResourceFile Location="Images\Images\lightboxbtnprev.gif" />
+    <ApplicationResourceFile Location="Images\Images\loading.gif" />
   </ApplicationResourceFiles>
   <TemplateFiles>
     <TemplateFile Location="ControlTemplates\PresentlyConfig.ascx" />

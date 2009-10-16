@@ -25,7 +25,9 @@ namespace com.intridea.presently
                 {
                     SelectedWebPart.Username = uc.Username;
                     SelectedWebPart.Url = uc.Url;
-                    SelectedWebPart.Password = uc.Password;
+                    if (uc.Password.Length != 0)
+                        SelectedWebPart.Password = uc.Password;
+                    SelectedWebPart.RefreshRate = uc.RefreshRate;
                     SelectedWebPart.SettingModified = true;
                     return true;
                 }
@@ -44,6 +46,7 @@ namespace com.intridea.presently
             uc.Username = SelectedWebPart.Username;
             uc.Password = SelectedWebPart.Password;
             uc.Url = SelectedWebPart.Url;
+            uc.RefreshRate = SelectedWebPart.RefreshRate;
 
             Controls.Add(uc);
 
@@ -55,6 +58,7 @@ namespace com.intridea.presently
             uc.Username = SelectedWebPart.Username;
             uc.Password = SelectedWebPart.Password;
             uc.Url = SelectedWebPart.Url;
+            uc.RefreshRate = SelectedWebPart.RefreshRate;
         }
     }
 }

@@ -6,5 +6,6 @@
     <File Path="lightboxicoloading.gif" Url="lightboxicoloading.gif"/>
     <File Path="lightboxbtnnext.gif" Url="lightboxbtnnext.gif"/>
     <File Path="lightboxbtnprev.gif" Url="lightboxbtnprev.gif"/>
+    <File Path="loading.gif" Url="loading.gif"/>
   </Module>
 </Elements>

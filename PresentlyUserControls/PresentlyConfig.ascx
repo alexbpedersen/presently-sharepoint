@@ -28,18 +28,6 @@
 
     </tr>
 	<tr>
-         <td >
-
-               <asp:RequiredFieldValidator
-                    ID="RequiredFieldValidator2"
-                    ControlToValidate="PasswordTextBox"
-                    ErrorMessage="Please enter Password.<br />"
-                    Display="Dynamic"
-                    runat="server"/>
-            </td>
-
-    </tr>
-	<tr>
 		<td>
             <div class="UserSectionHead">
                 Url
@@ -85,6 +73,26 @@
             </div>
         </td>
     </tr>
+ 	<tr>
+		<td>
+            <div class="UserSectionHead">
+                Auto-Refresh Rate
+            </div>
+            <div class="UserSectionBody">
+                <div class="UserControlGroup">
+					<asp:DropDownList ID="RefreshDropDown" runat="server"  
+                        meta:resourcekey="RefreshDropDownResource1">
+                          <asp:ListItem Value="60"> 1 min </asp:ListItem>
+                          <asp:ListItem Value="180"> 3 mins </asp:ListItem>
+                          <asp:ListItem Value="300"> 5 mins </asp:ListItem>
+                          <asp:ListItem Value="600"> 10 mins </asp:ListItem>
+                        </asp:DropDownList>
+                </div>
+            </div>
+            <div class="UserDottedLine" style="width: 100%">
+            </div>
+        </td>
+    </tr>    
 </table>
                     
                 
