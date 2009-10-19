@@ -96,13 +96,37 @@ namespace com.intridea.presently
                 scriptHandler.ID = "scriptHandler";
                 this.Controls.Add(scriptHandler);
             }
-            
+
+            Literal div = new Literal();
+            div.Text = "<div class='main_div'>";
+            this.Controls.Add(div);
+            div = new Literal();
+            div.Text = "<div id='big_box_update' class='update_box with_sidebar'>";
+            this.Controls.Add(div);
+            input = new TextBox();
+            input.CssClass = "presently_update_box";
+            input.ID = "update_text";
+            input.Rows = 2;
+            this.Controls.Add(input);
+            Button update = new Button();
+            update.Text = "Update";
+            update.ID = "big_box_submit";
+            update.CssClass = "presently_update_submit";
+            update.Click += new EventHandler(this.submit_Click);
+            this.Controls.Add(update);
+            div = new Literal();
+            div.Text = "</div>";
+            this.Controls.Add(div);
+            div = new Literal();
+            div.Text = "<div class='loading_div'> <img ALIGN=ABSMIDDLE src='resources/Images/Images/loading.gif'/> &nbsp;&nbsp;Loading ... </div>";
+            this.Controls.Add(div);
+
             if (refreshBox == null)
                 refreshBox = new UpdatePanel(); 
             refreshBox.ID = this.ID + "refreshBox";
             refreshBox.UpdateMode = UpdatePanelUpdateMode.Conditional;
             refreshBox.ChildrenAsTriggers = true;
-            Literal div = new Literal();
+            div = new Literal();
             div.Text = "<div class='twitterTimeline'> ";
             refreshBox.ContentTemplateContainer.Controls.Add(div);
             if (lit == null)
@@ -117,6 +141,10 @@ namespace com.intridea.presently
             //The ScriptManager control must be added first.
             //refreshBox.ContentTemplateContainer.Controls.Add(timer);
             this.Controls.Add(refreshBox);
+
+            div = new Literal();
+            div.Text = "</div>";
+            this.Controls.Add(div);
 
             SPSite mySite = SPContext.Current.Site;
             SPWeb myWeb = SPContext.Current.Web;
@@ -176,30 +204,10 @@ namespace com.intridea.presently
                 _twitterService.updateLogins(this.Username, this.Password, this.Url);
                 property_modified = false;
             }
-
             //HtmlGenericControl stylesheet = new HtmlGenericControl("style");
             //stylesheet.InnerHtml = Constants.Styles;
             //this.Controls.Add(stylesheet);
-            Literal div = new Literal();
-            div.Text = "<div id='big_box_update' class='update_box with_sidebar'>";
-            this.Controls.Add(div);
-            input = new TextBox();
-            input.CssClass = "presently_update_box";
-            input.ID = "update_text";
-            input.Rows = 2;
-            this.Controls.Add(input);
-            Button update = new Button();
-            update.Text = "Update";
-            update.ID = "big_box_submit";
-            update.CssClass = "presently_update_submit";
-            update.Click += new EventHandler(this.submit_Click);
-            this.Controls.Add(update);
-            div = new Literal();
-            div.Text = "</div>";
-            this.Controls.Add(div);
-            div = new Literal();
-            div.Text = "<div class='loading_div'> <img ALIGN=ABSMIDDLE src='resources/Images/Images/loading.gif'/> &nbsp;&nbsp;Loading ... </div>";
-            this.Controls.Add(div);
+
             if (lit == null)
             {
                 lit = new Literal();
@@ -218,6 +226,7 @@ namespace com.intridea.presently
                 trigger.EventName = "Tick";
                 refreshBox.Triggers.Add(trigger);
             }
+
         }
         private void submit_Click(object sender, EventArgs e)
         {
@@ -240,8 +249,13 @@ namespace com.intridea.presently
                 foreach (Attachment att in tweet.Assets)
                 {
                     SPQuery oQuery = new SPQuery();
-                    oQuery.Query = "<Where><Eq><FieldRef Name='DocumentId'/>" +
-                        "<Value Type='Number'>"+att.Id+"</Value></Eq></Where>";
+                    oQuery.Query = 
+                        "<Where><And>"+
+                            "<Eq><FieldRef Name='DocumentId'/>" +
+                                "<Value Type='Number'>"+att.Id+"</Value></Eq>" +
+                            "<Eq><FieldRef Name='PresentlyUrl'/>" +
+                                "<Value Type='Text'>'" + this.Url + "'</Value></Eq>"+
+                        "</And></Where>";
                     SPListItemCollection collListItems = _myList.GetItems(oQuery);
                     if (collListItems.Count == 0)
                     {
@@ -251,6 +265,7 @@ namespace com.intridea.presently
                         myListItem["URL"] = att.Url;
                         myListItem["Size"] = att.Size;
                         myListItem["MediaType"] = att.ContentType;
+                        myListItem["PresentlyUrl"] = this.Url;
                         if (att.ContentType.StartsWith("image"))
                         {
                             myListItem["Preview"] = att.Url.Replace("/original/", "/stream_multi_thumb/");
@@ -316,6 +331,9 @@ namespace com.intridea.presently
         private void TimerHandler(object sender, EventArgs eventArgs)
         {
             this.lit.Text = GetTweets();
+            LiteralControl lc = new LiteralControl();
+            lc.ID = "refreshBoxId";
+            scriptHandler.RegisterDataItem(lc, this.refreshBox.ClientID);
         }
 
         private void EnsurePostBack()
@@ -357,14 +375,15 @@ namespace com.intridea.presently
                 {
                     SPListTemplateCollection customListTemplates = site.GetCustomListTemplates(web); //create the connection library using the uploaded list template
                     SPListTemplate listTemplate = customListTemplates["Presently Document"];
-                    web.Lists.Add("Presently Document", "A custom list to store presently documents", listTemplate);
+                    Guid guid = web.Lists.Add("Presently Document", "A custom list to store presently documents", listTemplate);
+                    SPList presentlyList = web.Lists.GetList(guid, false);
+                    presentlyList.OnQuickLaunch = true;
+                    presentlyList.Update();
                 }
             }
             catch (Exception err)
             {
                 StringBuilder sb = new StringBuilder();
-                sb.Append("<div>" + _twitterService.isConfigured() + "</div>");
-                sb.Append("<div>" + this.Username + ":" + this.Password + ":" + this.Url + "</div>");
                 sb.Append("<div>" + err.Message + "</div>" + "<div>" + err.StackTrace + "</div>");
                 Literal error = new Literal();
                 error.Text = sb.ToString();

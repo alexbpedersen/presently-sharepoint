@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using com.intridea.presently;
-
+using System.Net;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 namespace TwitterTest
 {
     /// <summary>
@@ -77,7 +79,16 @@ namespace TwitterTest
         [TestMethod]
         public void TestSendTweets()
         {
-            com.intridea.presently.PresentlyWebPart part = new com.intridea.presently.PresentlyWebPart("ping", "test123", "intridea.presentlyapp.com");
+            ServicePointManager.ServerCertificateValidationCallback +=
+                delegate(
+                object sender,
+                X509Certificate certificate,
+                X509Chain chain,
+                SslPolicyErrors sslPolicyErrors)
+                {
+                    return true;
+                };
+            com.intridea.presently.PresentlyWebPart part = new com.intridea.presently.PresentlyWebPart("pradeep", "skyfallsin", "insane2.staging.presentlyapp.com");
             TwitterService ts = new TwitterService(part);
             ts.LastId = "935793";
             TwitterLib.TweetCollection tweets = ts.GetTweets();

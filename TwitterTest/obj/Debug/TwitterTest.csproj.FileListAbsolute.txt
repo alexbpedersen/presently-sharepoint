@@ -21,5 +21,4 @@ C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\obj\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\obj\Debug\TwitterTest.dll
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\obj\Debug\TwitterTest.pdb
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\bin\Debug\PresentlyWebPart.dll
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\bin\Debug\PresentlyWebPart.pdb
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\bin\Debug\TwitterLib.dll

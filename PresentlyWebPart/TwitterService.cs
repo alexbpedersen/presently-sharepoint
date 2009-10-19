@@ -1,6 +1,9 @@
 ﻿using System;
 using TwitterLib;
 using System.Security;
+using System.Net;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 namespace com.intridea.presently
 {
     public class TwitterService
@@ -44,6 +47,18 @@ namespace com.intridea.presently
             {
                 twitter.AddTweet(tweet);
             }
+            catch (System.Net.WebException we)
+            {
+                twitter.TwitterServerUrl = twitter.TwitterServerUrl.Replace("https://", "http://");
+                try
+                {
+                    twitter.AddTweet(tweet);
+                }
+                catch (Exception err)
+                {
+                }
+
+            }
             catch (Exception err)
             {
             }
@@ -61,7 +76,7 @@ namespace com.intridea.presently
             try
             {
                 //if (_lastId == null)
-                    tweets = twitter.GetFriendsTimeline();
+                tweets = twitter.GetFriendsTimeline();
                 /*else
                     tweets = twitter.GetFriendsTimeline(_lastId.ToString());
                 if (tweets != null && tweets.Count > 0)
@@ -74,6 +89,21 @@ namespace com.intridea.presently
                     tweets.Add(tweet);
                 }*/
                 return tweets;
+            }
+            catch (System.Net.WebException we)
+            {
+                twitter.TwitterServerUrl = twitter.TwitterServerUrl.Replace("https://","http://");
+                try
+                {
+                    return twitter.GetFriendsTimeline();
+                }
+                catch (Exception err)
+                {
+                    tweet.Text = err.Message;
+                    tweets.Add(tweet);
+                    return tweets;
+                }
+ 
             }
             catch (Exception err)
             {

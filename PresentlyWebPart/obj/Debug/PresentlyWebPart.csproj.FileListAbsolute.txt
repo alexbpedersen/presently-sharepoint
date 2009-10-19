@@ -24,12 +24,12 @@ C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\WebPart1\PresentlyWebPart\obj\Debug\PresentlyWebPart.dll
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\WebPart1\PresentlyWebPart\obj\Debug\PresentlyWebPart.pdb
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\WebPart1\PresentlyWebPart\bin\Debug\TwitterLib.dll
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Debug\TwitterLib.dll
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Debug\Images\lightboxblank.gif
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Debug\Images\lightboxbtnclose.gif
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Debug\Images\lightboxbtnnext.gif
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Debug\Images\lightboxbtnprev.gif
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Debug\Images\lightboxicoloading.gif
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Debug\TwitterLib.dll
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Debug\PresentlyWebPart.dll
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Debug\PresentlyWebPart.pdb
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\obj\Debug\ResolveAssemblyReference.cache
