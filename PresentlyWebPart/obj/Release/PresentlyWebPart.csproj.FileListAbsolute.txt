@@ -1,9 +1,9 @@
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Release\TwitterLib.dll
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Release\Images\lightboxblank.gif
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Release\Images\lightboxbtnclose.gif
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Release\Images\lightboxbtnnext.gif
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Release\Images\lightboxbtnprev.gif
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Release\Images\lightboxicoloading.gif
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Release\PresentlyImages\lightboxblank.gif
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Release\PresentlyImages\lightboxbtnclose.gif
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Release\PresentlyImages\lightboxbtnnext.gif
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Release\PresentlyImages\lightboxbtnprev.gif
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Release\PresentlyImages\lightboxicoloading.gif
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Release\PresentlyWebPart.dll
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\bin\Release\PresentlyWebPart.pdb
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyWebPart\obj\Release\ResolveAssemblyReference.cache

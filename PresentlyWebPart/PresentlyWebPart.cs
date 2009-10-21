@@ -116,7 +116,7 @@ namespace com.intridea.presently
             div.Text = "</div>";
             this.Controls.Add(div);
             div = new Literal();
-            div.Text = "<div class='loading_div'> <img ALIGN=ABSMIDDLE src='resources/Images/Images/loading.gif'/> &nbsp;&nbsp;Loading ... </div>";
+            div.Text = "<div class='loading_div'> <img ALIGN=ABSMIDDLE src='resources/PresentlyImages/PresentlyImages/loading.gif'/> &nbsp;&nbsp;Loading ... </div>";
             this.Controls.Add(div);
 
             if (refreshBox == null)
