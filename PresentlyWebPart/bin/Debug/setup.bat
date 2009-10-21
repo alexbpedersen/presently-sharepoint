@@ -151,11 +151,6 @@ goto LInitialize
     echo Validating the content of solution %PackageName% ...
     echo.
 
-    if exist "%SPFeaturesLocation%\PresentlyWebPart" (
-       echo Error: Feature folder PresentlyWebPart already exists in current SharePoint.
-       set ValidationFailed=1
-    )
-
     if exist "%SPFeaturesLocation%\Images" (
        echo Error: Feature folder Images already exists in current SharePoint.
        set ValidationFailed=1
@@ -163,6 +158,11 @@ goto LInitialize
 
     if exist "%SPFeaturesLocation%\ListTemplate" (
        echo Error: Feature folder ListTemplate already exists in current SharePoint.
+       set ValidationFailed=1
+    )
+
+    if exist "%SPFeaturesLocation%\PresentlyWebPart" (
+       echo Error: Feature folder PresentlyWebPart already exists in current SharePoint.
        set ValidationFailed=1
     )
 
@@ -184,14 +184,14 @@ goto LInitialize
     echo Deploying solution %PackageName% ...
     "%SPAdminTool%" -o deploysolution -name "%PackageName%" -local -allowGacDeployment -url %TargetWebUrl%
 
-    echo Activating feature PresentlyWebPart ...
-    "%SPAdminTool%" -o activatefeature -id e9988ba8-1114-467c-b3fc-da256b9fa076 -url %TargetSiteUrl%
-
     echo Activating feature Images ...
-    "%SPAdminTool%" -o activatefeature -id 62678329-22ce-40b7-baf4-5f9eb5ef2ca3 -url %TargetWebUrl%
+    "%SPAdminTool%" -o activatefeature -id 2441f088-1709-42f3-8ddf-1bda95f87206 -url %TargetWebUrl%
 
     echo Activating feature ListTemplate ...
-    "%SPAdminTool%" -o activatefeature -id 1a4dded3-22af-491c-a6fa-bc534b9136a7 -url %TargetWebUrl%
+    "%SPAdminTool%" -o activatefeature -id 36815fb4-f544-492d-a3d0-f1e6a39e2245 -url %TargetWebUrl%
+
+    echo Activating feature PresentlyWebPart ...
+    "%SPAdminTool%" -o activatefeature -id ece3d576-622d-4b01-9175-4c9cfe580a35 -url %TargetSiteUrl%
 
     goto :EOF
 
@@ -200,23 +200,23 @@ goto LInitialize
 @rem    LRetract
 @rem----------------------------------------------------------------------
 :LRetract
-    echo Deactivating feature PresentlyWebPart ...
-    "%SPAdminTool%" -o deactivatefeature -id e9988ba8-1114-467c-b3fc-da256b9fa076 -url %TargetSiteUrl% -force
-
-    echo Uninstalling feature PresentlyWebPart ...
-    "%SPAdminTool%" -o uninstallfeature -id e9988ba8-1114-467c-b3fc-da256b9fa076 -force
-
     echo Deactivating feature Images ...
-    "%SPAdminTool%" -o deactivatefeature -id 62678329-22ce-40b7-baf4-5f9eb5ef2ca3 -url %TargetWebUrl% -force
+    "%SPAdminTool%" -o deactivatefeature -id 2441f088-1709-42f3-8ddf-1bda95f87206 -url %TargetWebUrl% -force
 
     echo Uninstalling feature Images ...
-    "%SPAdminTool%" -o uninstallfeature -id 62678329-22ce-40b7-baf4-5f9eb5ef2ca3 -force
+    "%SPAdminTool%" -o uninstallfeature -id 2441f088-1709-42f3-8ddf-1bda95f87206 -force
 
     echo Deactivating feature ListTemplate ...
-    "%SPAdminTool%" -o deactivatefeature -id 1a4dded3-22af-491c-a6fa-bc534b9136a7 -url %TargetWebUrl% -force
+    "%SPAdminTool%" -o deactivatefeature -id 36815fb4-f544-492d-a3d0-f1e6a39e2245 -url %TargetWebUrl% -force
 
     echo Uninstalling feature ListTemplate ...
-    "%SPAdminTool%" -o uninstallfeature -id 1a4dded3-22af-491c-a6fa-bc534b9136a7 -force
+    "%SPAdminTool%" -o uninstallfeature -id 36815fb4-f544-492d-a3d0-f1e6a39e2245 -force
+
+    echo Deactivating feature PresentlyWebPart ...
+    "%SPAdminTool%" -o deactivatefeature -id ece3d576-622d-4b01-9175-4c9cfe580a35 -url %TargetSiteUrl% -force
+
+    echo Uninstalling feature PresentlyWebPart ...
+    "%SPAdminTool%" -o uninstallfeature -id ece3d576-622d-4b01-9175-4c9cfe580a35 -force
 
     echo Retracting solution %PackageName% ...
     "%SPAdminTool%" -o retractsolution -name "%PackageName%" -local -url %TargetWebUrl%

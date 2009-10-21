@@ -1,18 +1,18 @@
-﻿<solution id="c49b57ea-9553-4726-b0e7-6b28a83b5cff" name="PresentlyWebPart">
+﻿<solution id="96da34f7-2e71-4c27-9f28-6de7338e4f3e" name="PresentlyWebPart">
   <features>
-    <feature id="e9988ba8-1114-467c-b3fc-da256b9fa076">
-      <featureElements>
-        <featureElement id="6541136b-b6ba-49b9-bf67-1a55eb5e9e75" name="PresentlyWebPart" />
-      </featureElements>
-    </feature>
-    <feature id="62678329-22ce-40b7-baf4-5f9eb5ef2ca3">
+    <feature id="2441f088-1709-42f3-8ddf-1bda95f87206">
       <featureElements>
         <featureElement id="425f4671-0819-4ae9-b67a-34cc7f199f0b" name="Images" />
       </featureElements>
     </feature>
-    <feature id="1a4dded3-22af-491c-a6fa-bc534b9136a7">
+    <feature id="36815fb4-f544-492d-a3d0-f1e6a39e2245">
       <featureElements>
         <featureElement id="7e8790e2-be7a-4643-b638-3e9e1e99e86a" name="ListTemplate" />
+      </featureElements>
+    </feature>
+    <feature id="ece3d576-622d-4b01-9175-4c9cfe580a35">
+      <featureElements>
+        <featureElement id="6541136b-b6ba-49b9-bf67-1a55eb5e9e75" name="PresentlyWebPart" />
       </featureElements>
     </feature>
   </features>

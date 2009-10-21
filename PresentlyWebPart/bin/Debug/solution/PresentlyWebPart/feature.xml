@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Feature Id="e9988ba8-1114-467c-b3fc-da256b9fa076" Title="PresentlyWebPart" Scope="Site" Version="1.0.0.0" Hidden="FALSE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
+<Feature Id="ece3d576-622d-4b01-9175-4c9cfe580a35" Title="PresentlyWebPart" Scope="Site" Version="1.0.0.0" Hidden="FALSE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
   <ElementManifests>
     <ElementManifest Location="PresentlyWebPart\PresentlyWebPart.xml" />
     <ElementFile Location="PresentlyWebPart\PresentlyWebPart.webpart" />

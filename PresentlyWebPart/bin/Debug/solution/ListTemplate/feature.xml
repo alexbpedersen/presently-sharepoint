@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Feature Id="1a4dded3-22af-491c-a6fa-bc534b9136a7" Title="ListTemplate" Scope="Web" Version="1.0.0.0" Hidden="FALSE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
+<Feature Id="36815fb4-f544-492d-a3d0-f1e6a39e2245" Title="ListTemplate" Scope="Web" Version="1.0.0.0" Hidden="FALSE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
   <ElementManifests>
     <ElementManifest Location="ListTemplate\Module.xml" />
     <ElementFile Location="ListTemplate\presently_document.stp" />

@@ -41,7 +41,7 @@
     <Reference Include="System.Web" />
     <Reference Include="TwitterLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=19392ef3ce00d32c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\WebPart1\TwitterLib.dll</HintPath>
+      <HintPath>..\PresentlyWebPart\TwitterLib.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>

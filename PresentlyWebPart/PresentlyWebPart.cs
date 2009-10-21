@@ -82,8 +82,6 @@ namespace com.intridea.presently
             }
             if (!Page.ClientScript.IsClientScriptIncludeRegistered("Lightbox"))
                 Page.ClientScript.RegisterClientScriptInclude("Lightbox", Page.ClientScript.GetWebResourceUrl(this.GetType(), "com.intridea.presently.js.jquery.lightbox-0.5.js"));
-            if (!Page.ClientScript.IsClientScriptIncludeRegistered("Tag"))
-                Page.ClientScript.RegisterClientScriptInclude("Tag", Page.ClientScript.GetWebResourceUrl(this.GetType(), "com.intridea.presently.js.tag.js"));
             if (!Page.ClientScript.IsClientScriptIncludeRegistered("Presently"))
                 Page.ClientScript.RegisterClientScriptInclude("Presently", Page.ClientScript.GetWebResourceUrl(this.GetType(), "com.intridea.presently.js.presently.js"));
             CssRegistration.Register(Page.ClientScript.GetWebResourceUrl(this.GetType(), "com.intridea.presently.css.jquery.lightbox-0.5.css"));
@@ -242,7 +240,7 @@ namespace com.intridea.presently
         {
             SPSite mySite = SPContext.Current.Site;
             SPWeb myWeb = SPContext.Current.Web;
-            SPList _myList = myWeb.Lists["Presently Document"];
+            SPList _myList = CreateList(mySite, myWeb);
 
             foreach (Tweet tweet in tc)
             if (tweet.Assets != null) {
@@ -250,12 +248,14 @@ namespace com.intridea.presently
                 {
                     SPQuery oQuery = new SPQuery();
                     oQuery.Query = 
-                        "<Where><And>"+
-                            "<Eq><FieldRef Name='DocumentId'/>" +
-                                "<Value Type='Number'>"+att.Id+"</Value></Eq>" +
-                            "<Eq><FieldRef Name='PresentlyUrl'/>" +
-                                "<Value Type='Text'>'" + this.Url + "'</Value></Eq>"+
-                        "</And></Where>";
+                        "<Where>"+
+                            "<And>"+
+                                "<Eq><FieldRef Name='DocumentId'/>" +
+                                   "<Value Type='Number'>"+att.Id+"</Value></Eq>" +
+                                "<Eq><FieldRef Name='PresentlyUrl'/>" +
+                                    "<Value Type='Text'>" + this.Url + "</Value></Eq>"+
+                            "</And>"+
+                        "</Where>";
                     SPListItemCollection collListItems = _myList.GetItems(oQuery);
                     if (collListItems.Count == 0)
                     {
@@ -358,12 +358,12 @@ namespace com.intridea.presently
              ScriptManager.RegisterStartupScript(this, typeof(PresentlyWebPart), "UpdatePanelPostBack", fixupScript, true);
         }
 
-        private void CreateList(SPSite site, SPWeb web)
+        private SPList CreateList(SPSite site, SPWeb web)
         {
             SPList list = null;
             try
             {
-                list = web.Lists["Presently Document"];
+                list = web.Lists["Presently Documents"];
             }
             catch
             {
@@ -373,13 +373,17 @@ namespace com.intridea.presently
             {
                 if ((list == null))
                 {
+                    web.AllowUnsafeUpdates = true;
                     SPListTemplateCollection customListTemplates = site.GetCustomListTemplates(web); //create the connection library using the uploaded list template
-                    SPListTemplate listTemplate = customListTemplates["Presently Document"];
-                    Guid guid = web.Lists.Add("Presently Document", "A custom list to store presently documents", listTemplate);
+                    SPListTemplate listTemplate = customListTemplates["Presently Document Template"];
+                    Guid guid = web.Lists.Add("Presently Documents", "A custom list to store presently documents", listTemplate);
                     SPList presentlyList = web.Lists.GetList(guid, false);
                     presentlyList.OnQuickLaunch = true;
                     presentlyList.Update();
+                    web.AllowUnsafeUpdates = false;
+                    return presentlyList;
                 }
+                return list;
             }
             catch (Exception err)
             {
@@ -388,6 +392,7 @@ namespace com.intridea.presently
                 Literal error = new Literal();
                 error.Text = sb.ToString();
                 this.Controls.Add(error);
+                return null;
             }
         }
 

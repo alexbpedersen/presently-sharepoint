@@ -39,7 +39,8 @@ font-size:18px;
 font-weight:bold;
 margin-left:5px;
 margin-top:0;
-padding:5px;
+padding-top:5px;
+padding-bottom:5px;
 }
 
 #big_box_update {
@@ -104,7 +105,7 @@ padding:5px;
 
 .tweetText, .tweetRelativeTime {
     float: right;
-    width: 82%;
+    width: 78%;
     margin-right: 10px;
 }
 
