@@ -1,3 +1,6 @@
+If your sharepoint server doesnot have AJAX enabled, please follow the instructions from the following blog:
+http://bloggingabout.net/blogs/harold/archive/2008/06/30/ajax-enable-sharepoint-using-ajaxify-moss.aspx
+
 To Install Presently Web Part on your sharepoint server:
 1) Copy the solutions package to your sharepoint server.
 

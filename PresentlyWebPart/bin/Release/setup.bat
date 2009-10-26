@@ -21,8 +21,8 @@ goto LInitialize
     set Uninstall=
     set PackageFile=%~dp0PresentlyWebPart.wsp
     set PackageName=PresentlyWebPart.wsp
-    set DefaultWebUrl=http://localhost
-    set DefaultSiteUrl=http://localhost
+    set DefaultWebUrl=http://localhost/
+    set DefaultSiteUrl=http://localhost/
     set TargetWebUrl=
     set TargetSiteUrl=
     set SPTemplateLocation=%SPLocation%\template

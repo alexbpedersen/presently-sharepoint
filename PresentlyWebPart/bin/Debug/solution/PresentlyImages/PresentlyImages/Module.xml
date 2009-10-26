@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements Id="425f4671-0819-4ae9-b67a-34cc7f199f0b" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="PresentlyImages">
+    <File Path="PresentlyImages\lightboxblank.gif" Url="lightboxblank.gif" />
+    <File Path="PresentlyImages\lightboxbtnclose.gif" Url="lightboxbtnclose.gif" />
+    <File Path="PresentlyImages\lightboxicoloading.gif" Url="lightboxicoloading.gif" />
+    <File Path="PresentlyImages\lightboxbtnnext.gif" Url="lightboxbtnnext.gif" />
+    <File Path="PresentlyImages\lightboxbtnprev.gif" Url="lightboxbtnprev.gif" />
+    <File Path="PresentlyImages\loading.gif" Url="loading.gif" />
+  </Module>
+</Elements>

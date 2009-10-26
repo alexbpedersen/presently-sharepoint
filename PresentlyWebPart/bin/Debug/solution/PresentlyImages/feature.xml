@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature Id="fbb5bdbe-ee61-4a03-81de-699f1b734fc6" Title="PresentlyImages" Scope="Web" Version="1.0.0.0" Hidden="FALSE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ElementManifests>
+    <ElementManifest Location="PresentlyImages\Module.xml" />
+    <ElementFile Location="PresentlyImages\lightboxblank.gif" />
+    <ElementFile Location="PresentlyImages\lightboxbtnclose.gif" />
+    <ElementFile Location="PresentlyImages\lightboxbtnnext.gif" />
+    <ElementFile Location="PresentlyImages\lightboxbtnprev.gif" />
+    <ElementFile Location="PresentlyImages\lightboxicoloading.gif" />
+    <ElementFile Location="PresentlyImages\Loading.gif" />
+  </ElementManifests>
+</Feature>
