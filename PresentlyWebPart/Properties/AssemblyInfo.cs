@@ -36,7 +36,6 @@ using System.Runtime.InteropServices;
 [assembly: System.Web.UI.WebResource("com.intridea.presently.js.jquery-1.3.2.min.js", "text/javascript")]
 [assembly: System.Web.UI.WebResource("com.intridea.presently.js.jquery-ui-1.7.2.min.js", "text/javascript")]
 [assembly: System.Web.UI.WebResource("com.intridea.presently.js.jquery.corner.js", "text/javascript")]
-[assembly: System.Web.UI.WebResource("com.intridea.presently.js.tag.js", "text/javascript")]
 [assembly: System.Web.UI.WebResource("com.intridea.presently.js.presently.js", "text/javascript")]
 [assembly: System.Web.UI.WebResource("com.intridea.presently.js.jquery.lightbox-0.5.js", "text/javascript")]
 [assembly: System.Web.UI.WebResource("com.intridea.presently.css.jquery.lightbox-0.5.css", "text/css")]

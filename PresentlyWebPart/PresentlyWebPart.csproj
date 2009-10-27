@@ -85,8 +85,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="js\presently.js">
     </EmbeddedResource>
-    <EmbeddedResource Include="js\tag.js">
-    </EmbeddedResource>
     <EmbeddedResource Include="css\jquery.lightbox-0.5.css" />
     <Content Include="PresentlyImages\lightboxblank.gif">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

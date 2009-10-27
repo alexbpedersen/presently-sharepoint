@@ -11,20 +11,20 @@ function set_refresh_timer () {
      $('#id').empty();
     }, 3000);
 };
-function update_links(parent_div) {
-    if (parent_div) {
-        parent_div.find('a.user_link').click(function () {
-            parent = $j(this).parents().filter('div.main_div');
-            parent.find('.presently_update_box').val($j(this).attr("rel"));
+function update_links(prnt_div) {
+    if (prnt_div) {
+        prnt_div.find('a.user_link').click(function () {
+            prnt = $j(this).parents().filter('div.main_div');
+            prnt.find('.presently_update_box').val($j(this).attr("rel"));
         });   
-        parent_div.find('a.more_text_link').click(function () {
+        prnt_div.find('a.more_text_link').click(function () {
             $j(this).parent().find('.more_text').toggle();
         });
-        parent_div.find('a[rel=lightbox]').lightBox();                     
+        prnt_div.find('a[rel=lightbox]').lightBox();                     
      } else {
         $j('a.user_link').click(function () {
-            parent = $j(this).parents().filter('div.main_div');
-            parent.find('.presently_update_box').val($j(this).attr("rel"));
+            prnt = $j(this).parents().filter('div.main_div');
+            prnt.find('.presently_update_box').val($j(this).attr("rel"));
         });   
         $j('a.more_text_link').click(function () {
             $j(this).parent().find('.more_text').toggle();
@@ -32,20 +32,20 @@ function update_links(parent_div) {
         $j('a[rel=lightbox]').lightBox();                     
      }
 };
-function highlight_tweets(parent) {
-        parent.find('.twitterTimeline').effect("highlight", { }, 800);
+function highlight_tweets(prnt) {
+        prnt.find('.twitterTimeline').effect("highlight", { }, 800);
 ;
 };
 function BeginRequestHandler(sender, args)
 {
-    parent = $j(args._postBackElement).parents().filter('div.main_div');
-    parent.find('.loading_div').show();
+    prnt = $j(args._postBackElement).parents().filter('div.main_div');
+    prnt.find('.loading_div').show();
 };
 
 function EndRequestHandler(sender, args)
 {
-    parent = $j('#'+args._dataItems.refreshBoxId).parents().filter('div.main_div');
-    parent.find('.loading_div').hide();
-    update_links(parent);
-    highlight_tweets(parent);
+    prnt = $j('#'+args._dataItems.refreshBoxId).parents().filter('div.main_div');
+    prnt.find('.loading_div').hide();
+    update_links(prnt);
+    highlight_tweets(prnt);
 };

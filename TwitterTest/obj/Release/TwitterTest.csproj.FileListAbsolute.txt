@@ -1,3 +1,4 @@
+C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\obj\Release\ResolveAssemblyReference.cache
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\bin\Release\PresentlyImages\lightboxblank.gif
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\bin\Release\PresentlyImages\lightboxbtnclose.gif
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\bin\Release\PresentlyImages\lightboxbtnnext.gif
@@ -6,6 +7,5 @@ C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\bin\Release\TwitterLib.dll
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\bin\Release\TwitterTest.dll
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\bin\Release\TwitterTest.pdb
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\obj\Release\ResolveAssemblyReference.cache
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\obj\Release\TwitterTest.dll
 C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\TwitterTest\obj\Release\TwitterTest.pdb
