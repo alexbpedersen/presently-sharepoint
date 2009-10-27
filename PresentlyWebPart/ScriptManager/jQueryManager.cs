@@ -96,7 +96,7 @@ namespace jQuery.ScriptManager
 
             if (ReadyFunctions != null)
             {
-                Start.Append("$(document).ready(function(){");
+                Start.Append("$j(document).ready(function(){");
 
                 foreach (StartFunction r in ReadyFunctions)
                     Start.Append(r.FunctionName + Environment.NewLine);
