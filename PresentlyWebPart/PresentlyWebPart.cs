@@ -178,6 +178,7 @@ namespace com.intridea.presently
 
                 property_modified = false;
             }
+            input.Text = "";
             base.OnPreRender(e);
         }
         protected override void CreateChildControls() 

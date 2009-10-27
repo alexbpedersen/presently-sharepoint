@@ -65,7 +65,7 @@ namespace TwitterTest
         [TestMethod]
         public void TestGetTweets()
         {
-            com.intridea.presently.PresentlyWebPart part = new com.intridea.presently.PresentlyWebPart("ping","test123", "intridea.presentlyapp.com");
+            com.intridea.presently.PresentlyWebPart part = new com.intridea.presently.PresentlyWebPart("pyu","test1234", "test.cs.intridea.com");
             String tweets = part.GetTweets();
             Assert.IsTrue(tweets.Length > 0);
         }
@@ -88,11 +88,11 @@ namespace TwitterTest
                 {
                     return true;
                 };
-            com.intridea.presently.PresentlyWebPart part = new com.intridea.presently.PresentlyWebPart("pradeep", "skyfallsin", "insane2.staging.presentlyapp.com");
+            com.intridea.presently.PresentlyWebPart part = new com.intridea.presently.PresentlyWebPart("pyu", "test1234", "test.cs.intridea.com");
             TwitterService ts = new TwitterService(part);
             ts.LastId = "935793";
             TwitterLib.TweetCollection tweets = ts.GetTweets();
-            //ts.SendTweet("d @ping test");
+            ts.SendTweet("d @ping test");
             TwitterLib.TweetCollection tweets2 = ts.GetTweets();
             Assert.IsTrue(tweets2.Count > 0);
         }

@@ -33,6 +33,7 @@ namespace com.intridea.presently
                 SecureString spassword = getPasswordAsSecureString(password);
                 twitter = new TwitterNet(user, spassword);
                 twitter.TwitterServerUrl = "https://" + domain + "/api/twitter/";
+                twitter.ClientName = "SharePoint";
             }
             else
             {
