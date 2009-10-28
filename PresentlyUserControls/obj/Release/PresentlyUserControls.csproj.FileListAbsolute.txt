@@ -1,5 +1,0 @@
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyUserControls\bin\PresentlyUserControls.dll
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyUserControls\bin\PresentlyUserControls.pdb
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyUserControls\obj\Release\ResolveAssemblyReference.cache
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyUserControls\obj\Release\PresentlyUserControls.dll
-C:\Documents and Settings\Administrator\My Documents\Visual Studio 2008\Projects\PresentlyWebPart\PresentlyUserControls\obj\Release\PresentlyUserControls.pdb

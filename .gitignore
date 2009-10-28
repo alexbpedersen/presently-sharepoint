@@ -1,1 +1,8 @@
-TestResults/*
+TestResults/
+PresentlyWebPart/bin/Debug/
+PresentlyWebPart/obj/
+PresentlyWebPart/pkg/
+TwitterTest/bin/
+TwitterTest/obj/
+PresentlyUserControls/obj/
+PresentlyUserControls/pkg/

@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Feature Id="30df8f1e-f20b-4e20-ba78-caf723760be1" Title="ListTemplate" Scope="Web" Version="1.0.0.0" Hidden="FALSE" DefaultResourceFile="core" xmlns="http://schemas.microsoft.com/sharepoint/">
-  <ElementManifests>
-    <ElementManifest Location="ListTemplate\Module.xml" />
-    <ElementFile Location="ListTemplate\presently_document.stp" />
-  </ElementManifests>
-</Feature>

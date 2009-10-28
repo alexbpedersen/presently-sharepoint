@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Elements Id="7e8790e2-be7a-4643-b638-3e9e1e99e86a" xmlns="http://schemas.microsoft.com/sharepoint/">
-  <Module Name="ListTemplate" Url="_catalogs/lt" RootWebOnly="TRUE">
-    <File Url="presently_document.stp" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" Path="ListTemplate\presently_document.stp">
-      <Property Name="Title" Value="Presently Document" />
-    </File>
-  </Module>
-</Elements>

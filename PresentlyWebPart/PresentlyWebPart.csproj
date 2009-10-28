@@ -110,6 +110,9 @@
     <Content Include="ListTemplate\Module.xml" />
     <EmbeddedResource Include="css\presently.css">
     </EmbeddedResource>
+    <Content Include="README.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TwitterLib.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
