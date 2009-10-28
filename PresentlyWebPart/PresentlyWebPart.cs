@@ -110,7 +110,8 @@ namespace com.intridea.presently
             input = new TextBox();
             input.CssClass = "presently_update_box";
             input.ID = "update_text";
-            input.Rows = 2;
+            input.Rows = 3;
+            input.TextMode = TextBoxMode.MultiLine;
             refreshBox.ContentTemplateContainer.Controls.Add(input);
             update = new Button();
             update.Text = "Update";
@@ -179,8 +180,7 @@ namespace com.intridea.presently
                 timer.Interval = refreshInterval * 1000;
 
                 property_modified = false;
-            }
-            input.Text = "";
+            }            
             base.OnPreRender(e);
         }
         protected override void CreateChildControls() 
@@ -246,6 +246,7 @@ namespace com.intridea.presently
             {
                 _twitterService.SendTweet(input.Text);
             }
+            input.Text = "";
             this.lit.Text = GetTweets();
             LiteralControl lc = new LiteralControl();
             lc.ID = "refreshBoxId";
