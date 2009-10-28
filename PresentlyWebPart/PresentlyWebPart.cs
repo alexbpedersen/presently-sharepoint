@@ -27,6 +27,7 @@ namespace com.intridea.presently
         String _password;
         String _url;
         TwitterService _twitterService;
+        Button update;
 
         protected jQueryManager jqueryManager = null;
         private int refreshInterval = 60;
@@ -98,32 +99,33 @@ namespace com.intridea.presently
             Literal div = new Literal();
             div.Text = "<div class='main_div'>";
             this.Controls.Add(div);
+            if (refreshBox == null)
+                refreshBox = new UpdatePanel();
+            refreshBox.ID = this.ID + "refreshBox";
+            refreshBox.UpdateMode = UpdatePanelUpdateMode.Conditional;
+            refreshBox.ChildrenAsTriggers = true; 
             div = new Literal();
             div.Text = "<div id='big_box_update' class='update_box with_sidebar'>";
-            this.Controls.Add(div);
+            refreshBox.ContentTemplateContainer.Controls.Add(div);
             input = new TextBox();
             input.CssClass = "presently_update_box";
             input.ID = "update_text";
             input.Rows = 2;
-            this.Controls.Add(input);
-            Button update = new Button();
+            refreshBox.ContentTemplateContainer.Controls.Add(input);
+            update = new Button();
             update.Text = "Update";
             update.ID = "big_box_submit";
             update.CssClass = "presently_update_submit";
             update.Click += new EventHandler(this.submit_Click);
-            this.Controls.Add(update);
+            refreshBox.ContentTemplateContainer.Controls.Add(update);
+
             div = new Literal();
             div.Text = "</div>";
-            this.Controls.Add(div);
+            refreshBox.ContentTemplateContainer.Controls.Add(div);
             div = new Literal();
             div.Text = "<div class='loading_div'> <img ALIGN=ABSMIDDLE src='/resources/PresentlyImages/PresentlyImages/loading.gif'/> &nbsp;&nbsp;Loading ... </div>";
-            this.Controls.Add(div);
+            refreshBox.ContentTemplateContainer.Controls.Add(div);
 
-            if (refreshBox == null)
-                refreshBox = new UpdatePanel(); 
-            refreshBox.ID = this.ID + "refreshBox";
-            refreshBox.UpdateMode = UpdatePanelUpdateMode.Conditional;
-            refreshBox.ChildrenAsTriggers = true;
             div = new Literal();
             div.Text = "<div class='twitterTimeline'> ";
             refreshBox.ContentTemplateContainer.Controls.Add(div);
@@ -191,6 +193,12 @@ namespace com.intridea.presently
             timer.Tick += new EventHandler<EventArgs>(this.TimerHandler);
             //this.Controls.Add(timer);
 
+            if (update == null)
+                update = new Button();
+            update.Text = "Update";
+            update.ID = "big_box_submit";
+            update.CssClass = "presently_update_submit";
+            update.Click += new EventHandler(this.submit_Click);
             if (refreshBox == null)
                 refreshBox = new UpdatePanel();
             refreshBox.ContentTemplateContainer.Controls.Add(timer);
@@ -214,15 +222,19 @@ namespace com.intridea.presently
             }
             if (!_twitterService.isConfigured())
                 lit.Text = "<br/>Please provide presently URL and User/Password in the settings.<br/>" + lit.Text;
-            else if (!Page.IsPostBack)
+            /*else if (!Page.IsPostBack)
                 lit.Text = GetTweets();
-
+            */
             if (refreshBox.Triggers != null)
             {
                 refreshBox.Triggers.Clear();
                 AsyncPostBackTrigger trigger = new AsyncPostBackTrigger();
                 trigger.ControlID = timer.ID;
                 trigger.EventName = "Tick";
+                refreshBox.Triggers.Add(trigger);
+                trigger = new AsyncPostBackTrigger();
+                trigger.ControlID = update.ID;
+                trigger.EventName = "Click";
                 refreshBox.Triggers.Add(trigger);
             }
 
@@ -233,8 +245,11 @@ namespace com.intridea.presently
             if (input.Text != String.Empty)
             {
                 _twitterService.SendTweet(input.Text);
-                lit.Text = GetTweets();
             }
+            this.lit.Text = GetTweets();
+            LiteralControl lc = new LiteralControl();
+            lc.ID = "refreshBoxId";
+            scriptHandler.RegisterDataItem(lc, this.refreshBox.ClientID);
         }
 
         private void StoreAttachments(TweetCollection tc)

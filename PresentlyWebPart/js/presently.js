@@ -1,8 +1,9 @@
 ﻿var $j = jQuery.noConflict();
 $j(document).ready(function () {
-        update_links();
+        //update_links();
         Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
         Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+        initial_load();
     }
 );
 
@@ -11,6 +12,11 @@ function set_refresh_timer () {
      $('#id').empty();
     }, 3000);
 };
+function initial_load() {
+    $j('input.presently_update_submit').each(function() {
+        this.click();
+    });
+}
 function update_links(prnt_div) {
     if (prnt_div) {
         prnt_div.find('a.user_link').click(function () {
